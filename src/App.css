@@ -1,0 +1,9 @@
+form, .search{
+  border: 2px #888 solid;
+  margin: 10px;
+  padding: 10px;
+  overflow: hidden;
+}
+form * {
+  margin-right: 10px
+}
