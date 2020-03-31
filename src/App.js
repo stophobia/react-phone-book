@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PhoneForm from './components/PhoneForm'
 import PhoneInfoList from './components/PhoneInfoList'
-import './App.css';
+import './App.css'
 
 class App extends Component {
   id = 2
@@ -28,7 +28,7 @@ class App extends Component {
   handleCreate = (data) => {
     const { information } = this.state
     this.setState({
-      information: information.concat({id: this.id ++, ...data})
+      information: information.concat({ id: this.id ++, ...data })
     })
   }
   handleRemove = (id) => {
@@ -42,7 +42,7 @@ class App extends Component {
     this.setState({
       information: information.map(
         info => id === info.id
-          ? {...info, ...data}
+          ? { ...info, ...data }
           : info
       )
     })
@@ -55,24 +55,26 @@ class App extends Component {
     return (
       <div>
         <PhoneForm
-          onCreate={this.handleCreate}
+          onCreate={ this.handleCreate }
         />
-        <div className="search">
+        <div
+          className="search"
+        >
           <input
             placeholder='Search...'
-            onChange={this.handleChange}
-            value={keyword}
+            onChange={ this.handleChange }
+            value={ keyword }
           />
         </div>
         <hr />
         <PhoneInfoList
-          data={filteredList}
-          onRemove={this.handleRemove}
-          onUpdate={this.handleUpdate}
+          data={ filteredList }
+          onRemove={ this.handleRemove }
+          onUpdate={ this.handleUpdate }
         />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

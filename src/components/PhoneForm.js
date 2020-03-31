@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class PhoneForm extends Component {
   state = {
@@ -20,24 +20,28 @@ class PhoneForm extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form
+        onSubmit={ this.handleSubmit }
+      >
         <input
           placeholder='name'
-          value={this.state.name}
-          onChange={this.handleChange}
+          value={ this.state.name }
+          onChange={ this.handleChange }
           name='name'
         />
         <input
           placeholder='phone number'
-          value={this.state.phone}
-          onChange={this.handleChange}
+          value={ this.state.phone }
+          onChange={ this.handleChange }
           name='phone'
         />
-        <div>{this.state.name} {this.state.phone}</div>
-        <button type='submit'>Submit</button>
+        <div>{ this.state.name } { this.state.phone }</div>
+        <button
+          type='submit'
+        >Submit</button>
       </form>
-    );
+    )
   }
 }
 
-export default PhoneForm;
+export default PhoneForm

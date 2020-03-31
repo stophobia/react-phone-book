@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class PhoneInfo extends Component {
   static defaultProps = {
@@ -29,13 +29,13 @@ class PhoneInfo extends Component {
   }
   componentDidUpdate(prevProps, prevState){
     const { info, onUpdate } = this.props
-    if(!prevState.editing && this.state.editing){
+    if (!prevState.editing && this.state.editing) {
       this.setState({
         name: info.name,
         phone: info.phone
       })
     }
-    if(prevState.editing && !this.state.editing){
+    if (prevState.editing && !this.state.editing) {
       onUpdate(info.id, {
         name: this.state.name,
         phone: this.state.phone
@@ -43,9 +43,10 @@ class PhoneInfo extends Component {
     }
   }
   shouldComponentUpdate(nextProps, nextState){
-    if(!this.state.editing
-      && !nextState.editing
-      && nextProps === this.props.info
+    if (
+      !this.state.editing &&
+      !nextState.editing &&
+      nextProps === this.props.info
     ) {
       return false
     }
@@ -58,25 +59,31 @@ class PhoneInfo extends Component {
       margin: '10px'
     }
     const { editing } = this.state
-    if(editing){
+    if (editing) {
       return (
-        <div style={style}>
+        <div
+          style={ style }
+        >
           <div>
             <input
-              value={this.state.name}
+              value={ this.state.name }
               name='name'
-              placeholder={this.state.name}
-              onChange={this.handleChange}
+              placeholder={ this.state.name }
+              onChange={ this.handleChange }
             />
             <input
-              value={this.state.phone}
+              value={ this.state.phone }
               name='phone'
-              placeholder={this.state.phone}
-              onChange={this.handleChange}
+              placeholder={ this.state.phone }
+              onChange={ this.handleChange }
             />
           </div>
-          <button onClick={this.handleToggleEdit}>Apply</button>
-          <button onClick={this.onRemove}>Delete</button>
+          <button
+            onClick={ this.handleToggleEdit }
+          >Apply</button>
+          <button
+            onClick={ this.onRemove }
+          >Delete</button>
         </div>
       )
     }
@@ -84,14 +91,20 @@ class PhoneInfo extends Component {
       name, phone
     } = this.props.info
     return (
-      <div style={style}>
-        <div><b>{name}</b></div>
-        <div>{phone}</div>
-        <button onClick={this.handleToggleEdit}>Update</button>
-        <button onClick={this.hadleRemove}>Delete</button>
+      <div
+        style={ style }
+      >
+        <div><b>{ name }</b></div>
+        <div>{ phone }</div>
+        <button
+          onClick={this.handleToggleEdit}
+        >Update</button>
+        <button
+          onClick={this.hadleRemove}
+        >Delete</button>
       </div>
-    );
+    )
   }
 }
 
-export default PhoneInfo;
+export default PhoneInfo

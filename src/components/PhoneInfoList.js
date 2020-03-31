@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PhoneInfo from './PhoneInfo'
 
 class PhoneInfoList extends Component {
@@ -15,10 +15,10 @@ class PhoneInfoList extends Component {
     const list = data.map(
       info => (
         <PhoneInfo
-          key={info.id}
-          info={info}
-          onRemove={onRemove}
-          onUpdate={onUpdate}
+          key={ info.id }
+          info={ info }
+          onRemove={ onRemove }
+          onUpdate={ onUpdate }
         />
       )
     )
@@ -26,8 +26,8 @@ class PhoneInfoList extends Component {
       <div>
         {list}
       </div>
-    );
+    )
   }
 }
 
-export default PhoneInfoList;
+export default PhoneInfoList
