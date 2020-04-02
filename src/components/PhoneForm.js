@@ -35,7 +35,6 @@ class PhoneForm extends Component {
           onChange={ this.handleChange }
           name='phone'
         />
-        <div>{ this.state.name } { this.state.phone }</div>
         <button
           type='submit'
         >Submit</button>
